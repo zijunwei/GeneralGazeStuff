@@ -15,7 +15,7 @@ Fixation Agreement
 ################################################################
 
 1) AUC analysis = ROC metric
-Use 'predictFixations.m'
+Use 'demo.m'
 
 ROC metric is also one of the most popular methods. It is often used to compute inter-subject agreement (similarity between multiple subjects). 
 
