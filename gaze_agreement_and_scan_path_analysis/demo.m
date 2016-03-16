@@ -1,9 +1,7 @@
-% Author: Kiwon Yun (kyun@cs.stonybrook.edu)
-% Created: Mar 15, 2016
-% Modified: Mar 15, 2016
+figure;
+imshow(I);
+title(sprintf('score = %.3f', agreement_score);
 
-% demo.m
-% compute fixation agreement among three subjects
 
 addpath(genpath('lib'));
 
