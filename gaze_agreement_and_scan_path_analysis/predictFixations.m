@@ -41,7 +41,7 @@ precision(end+1) = 1;
 falseAlarms(end+1) = 1;
 areaUnderROC = trapz(falseAlarms, precision);
 
-showdetails = 1;
+showdetails = 0;
 if nargout==0 || showdetails == 1
     figure(1)
     subplot(121); imagesc(saliencyMap); title('SaliencyMap with fixations to be predicted');
