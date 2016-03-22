@@ -6,8 +6,27 @@ addpath( genpath('mmread') );
 
 video_root_path = '../data/output';
 
-files = dir(sprintf('%s/*.mp4', video_root_path));
+files = dir(fullfile(video_root_path, '/*.mp4'));
 
+%% check whether filename contains an unsupported character
+disp('remove "-" from the name of the files\n');
+
+fout = fopen('filename_info.txt', 'w');
+for i=1:length(files)
+    ori_filename = files(i).name;
+    
+    new_filename = strrep(ori_filename, '-', '_');
+    
+    fprintf(fout, '%s %s\n', ori_filename, new_filename);
+    
+    if ~strcmp(ori_filename, new_filename)
+        movefile(fullfile(video_root_path, '/', ori_filename), fullfile(video_root_path, '/', new_filename));
+    end
+end
+
+fclose(fout);
+
+%% save the video information
 width = [];
 height = [];
 totalDuration = [];
@@ -37,3 +56,4 @@ fprintf('[# of frames] total: %d, avg: %.3f, min: %d, max: %d\n', sum(nrFramesTo
 fprintf('[frame rate] avg: %.3f, min: %.3f, max: %.3f\n', mean(rate) , min(rate), max(rate));
 
 save('video_info.mat', 'filenames', 'width', 'height', 'totalDuration', 'nrFramesTotal', 'rate');
+
