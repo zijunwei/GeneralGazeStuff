@@ -65,7 +65,7 @@ C) Create a project using experiment builder, and generate a executable experime
 7. click 'randomization setting', check 'enable trial randomization'
 8. check whether 'Iteration Count' is same as the number of videos
 
-NOTE: if you want to split the data into multiple trials, then change the numbers 'Split By'. Each number indicates the number of videos in each trial.
+NOTE: if you want to split the data into multiple trials, then change the numbers 'Split By'. Each number indicates the number of videos in each trial (e.g. [50,50]).
 	  Also, change 'Iteration Count' in 'BLOCK' as total # of splits
 
 9. check 'TRIAL -> Conditional -> Attribute of Trial.iteration -> Value' equals to total # of videos
